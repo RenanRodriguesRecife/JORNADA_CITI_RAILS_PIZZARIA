@@ -1,0 +1,19 @@
+<%= form_for ([@offer, @offer.users.build]) do |f| %>
+   <div class="field">
+                          <%= f.label :name %>
+                          <%= f.text_field :name %>
+              </div>
+              <div class="field">
+                          <%= f.label :tel %>
+                          <%= f.text_field :tel %>
+              </div>
+              <div class="field">
+                          <%= f.label :address %>
+                          <%= f.text_field :address %>
+              </div>
+              
+              <div class="actions">
+                          <%= f.submit "Cadastrar"%>
+              </div>
+  <% end %>
+

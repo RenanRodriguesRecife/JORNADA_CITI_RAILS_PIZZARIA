@@ -1,0 +1,23 @@
+<h1> Pizza Deliver </h1>
+<h3>Preencha os dados para confirmar seu pedido</h3>
+<%= form_for ([@offer, @offer.users.build]) do |f| %>
+   <div class="field">
+                          <%= f.label :name %>
+                          <%= f.text_field :name %>
+              </div>
+              <div class="field">
+                          <%= f.label :tel %>
+                          <%= f.text_field :tel %>
+              </div>
+              <div class="field">
+                          <%= f.label :address %>
+                          <%= f.text_field :address %>
+              </div>
+              
+              <div class="actions">
+                          <%= f.submit "Fazer Pedido"%>
+              </div>
+  <% end %>
+
+  
+

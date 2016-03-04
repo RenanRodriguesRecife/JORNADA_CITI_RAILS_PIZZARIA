@@ -1,0 +1,38 @@
+<h1> Pizza Deliver </h1>
+<%= form_for :session, url: sign_in_path do |f| %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+   
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Log in" %>
+    </div>
+  <p>New user? <%= link_to "Sign up now!", new_company_path %></p>
+  <% end %>
+
+ <table>
+     <thead>
+       <tr>
+         <th>Company</th>
+         <th>Offer</th>
+         <th>Value</th>
+       </tr>
+     </thead>
+     <tbody>
+       <% @companies.each do |user| %>
+        <% user.offers.each do |o|%>
+         <tr>
+          <td><%= user.name %></td>
+          <td><%= o.tittle %></td>  
+          <td><%= o.value %></td>  
+          <td><%= link_to "Compre", offer_path(o)%></td>
+         </tr>
+        <%end%>
+      <%end%>
+    </tbody>
+ </table>

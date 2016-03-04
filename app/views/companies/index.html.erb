@@ -1,0 +1,23 @@
+<h1> Pizza Deliver </h1>
+  <table>
+     <thead>
+       <tr>
+         <th>Company</th>
+         <th>Offer</th>
+         <th>Value</th>
+       </tr>
+     </thead>
+     <tbody>
+       <% @companies.each do |user| %>
+        <% user.offers.each do |o|%>
+         <tr>
+          <td><%= user.name %></td>
+          <td><%= o.tittle %></td>  
+          <td><%= o.value %></td>  
+          <td><%= link_to "Compre", offer_path(o)%></td>
+         </tr>
+        <%end%>
+      <%end%>
+    </tbody>
+ </table>
+

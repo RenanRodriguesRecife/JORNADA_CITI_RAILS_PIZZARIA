@@ -1,0 +1,9 @@
+
+
+  <html>
+              <body>
+  <h3>Perfil de <%= @company.name %> </h3>
+  <%= @company.email %>
+  </body>
+  </html>
+
