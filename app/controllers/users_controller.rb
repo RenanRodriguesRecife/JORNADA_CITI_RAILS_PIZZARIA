@@ -17,7 +17,8 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-		@user = User.find(params[:offer_id])
+		@offer = Offer.find(params[:offer_id])
+		@user = @offer.users.find(params[:id])
 		@user.destroy
 		redirect_to companies_path
 	end

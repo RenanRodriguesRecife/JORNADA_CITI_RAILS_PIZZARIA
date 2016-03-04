@@ -17,6 +17,13 @@ class OffersController < ApplicationController
   		@offer = Offer.find(params[:id])
 	end
 
+	def destroy
+		@company = Company.find(params[:company_id])
+		@offer = @company.offers.find(params[:id])
+		@offer.destroy
+		redirect_to companies_path
+	end
+
 	private 
 	def offers_params
 		params.require(:offer).permit(:tittle, :value)

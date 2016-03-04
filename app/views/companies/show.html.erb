@@ -11,6 +11,7 @@
          <th>Cliente</th>
         <th>tel</th>
         <th>address</th>
+        <th></th>
        </tr>
      </thead>
      <tbody>
@@ -21,7 +22,8 @@
         <td><%= o.value %></td>  
         <td><%= u.name %></td>  
         <td><%= u.tel %></td>  
-        <td><%= u.address %></td>  
+        <td><%= u.address %></td> 
+        <td><li><%= link_to "Cancelar Pedido", offer_user_path(o,u), method: :delete, data:{confirm: 'Você tem certeza?'}%></li> </td>
          </tr>
         <%end%>
       <%end%>
@@ -41,11 +43,13 @@
       <tr>
         <th>Offer</th>
         <th>Value</th>
+        <th></th>
       </tr>
       <% @company.offers.each do |o|%>
       <tr>
         <td><%= o.tittle %></td>  
         <td><%= o.value %></td>  
+        <td><li><%= link_to "Cancelar Pedido", company_offer_path(@company,o), method: :delete, data:{confirm: 'Você tem certeza?'}%></li> </td>
       </tr>
       <%end%>
   </table>
