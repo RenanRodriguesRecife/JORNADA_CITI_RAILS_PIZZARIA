@@ -3,8 +3,8 @@ class CreateCompanies < ActiveRecord::Migration
     create_table :companies do |t|
       t.string :name
       t.string :email
-      t.integer :cnpj
-      t.integer :tel
+      t.string :cnpj
+      t.string :tel
 
       t.timestamps null: false
     end

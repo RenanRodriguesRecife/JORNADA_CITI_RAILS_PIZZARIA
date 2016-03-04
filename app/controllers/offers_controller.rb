@@ -7,8 +7,8 @@ class OffersController < ApplicationController
 	def create
 		@company = Company.find(params[:company_id])
 		@offer = @company.offers.create(offers_params)
-		@user = User.new(user_params)
-		@offers_user = OffersUser.create ({user_id: @user.id,offer_id: @offer.id})
+	#	@user = User.new(user_params)
+	#	@offers_user = OffersUser.create ({user_id: @user.id,offer_id: @offer.id})
 		@offer.save
 		redirect_to root_path
 	end
@@ -22,8 +22,8 @@ class OffersController < ApplicationController
 		params.require(:offer).permit(:tittle, :value)
 	end
 
-	def user_params
-		params.require(:user).permit(:name, :tel, :address)
-	end
+	#def user_params
+	#	params.require(:user).permit(:name, :tel, :address)
+	#end
 
 end

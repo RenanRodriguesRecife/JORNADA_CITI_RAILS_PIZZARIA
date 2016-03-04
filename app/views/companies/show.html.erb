@@ -2,31 +2,32 @@
 
   <html>
     <body>
-
- 
- <h1>List Pedidos</h1>
-  <table>
-      <tr>
-        <th>Offer</th>
-        <th>Value</th>
-        <th>Cliente</th>
+<h1>List Pedidos</h1>
+<table>
+     <thead>
+       <tr>
+         <th>Offer</th>
+         <th>Value</th>
+         <th>Cliente</th>
         <th>tel</th>
         <th>address</th>
-      </tr>
+       </tr>
+     </thead>
+     <tbody>
       <% @company.offers.each do |o|%>
-      <% o.users.each do |u|%>
-      <tr>
+         <% o.users.each do |u|%>
+         <tr>
         <td><%= o.tittle %></td>  
         <td><%= o.value %></td>  
         <td><%= u.name %></td>  
         <td><%= u.tel %></td>  
         <td><%= u.address %></td>  
-
-      </tr>
+         </tr>
+        <%end%>
       <%end%>
-      <%end%>
-  </table>
-
+    </tbody>
+ </table>
+      
   <h3>Perfil de <%= @company.name %> </h3>
    <%= @company.email %>
   <% if current_user == @company %>
